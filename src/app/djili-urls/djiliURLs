@@ -1,0 +1,8 @@
+export class djiliURLs {
+    
+    public static SPRING_BASE_URL="http://localhost:8082/djili/"
+    public static USER_CONTROLLER="users/"
+
+    public static SIGNUP_URL=this.SPRING_BASE_URL+"signup"
+    public static LOGIN_URL=this.SPRING_BASE_URL+"login"
+}

@@ -1,0 +1,129 @@
+<!-- <div class="signup-container">
+    <div class="signup-box">
+      <h2>Create an Account</h2>
+      <form [formGroup]="signupForm" (ngSubmit)="signup()">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" formControlName="username" />
+          <div *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)" class="error-msg">
+            Username is required.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" formControlName="email" />
+          <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="error-msg">
+            Enter a valid email address.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" formControlName="phone" />
+          <div *ngIf="f.phone.invalid && (f.phone.dirty || f.phone.touched)" class="error-msg">
+            Phone number must be 10 digits.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" formControlName="password" />
+          <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="error-msg">
+            Password is required.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input type="text" id="address" formControlName="address" />
+          <div *ngIf="f.address.invalid && (f.address.dirty || f.address.touched)" class="error-msg">
+            Address is required.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" formControlName="location" />
+          <div *ngIf="f.location.invalid && (f.location.dirty || f.location.touched)" class="error-msg">
+            Location is required.
+          </div>
+
+          <div *ngIf="signupResponseMessage" class="response-message">
+            {{ signupResponseMessage }}
+          </div>
+        </div>
+  
+        <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+      </form>
+      <p class="login-link">Already have an account? <a routerLink="/login">Login</a></p>
+    </div>
+  </div>
+   -->
+   <div class="signup-container">
+    <div class="signup-box">
+      <h2>Create an Account</h2>
+      <div *ngIf="signupResponseMessage" class="response-message">
+        {{ signupResponseMessage }}
+      </div>
+      <form [formGroup]="signupForm" (ngSubmit)="signup()">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" formControlName="username" />
+          <div *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)" class="error-msg">
+            Username is required.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" formControlName="email" />
+          <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="error-msg">
+            Enter a valid email address.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" formControlName="phone" />
+          <div *ngIf="f.phone.invalid && (f.phone.dirty || f.phone.touched)" class="error-msg">
+            Phone number must be 10 digits.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" formControlName="password" />
+          <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="error-msg">
+            Password is required.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input type="text" id="address" formControlName="address" />
+          <div *ngIf="f.address.invalid && (f.address.dirty || f.address.touched)" class="error-msg">
+            Address is required.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" formControlName="location" />
+          <div *ngIf="f.location.invalid && (f.location.dirty || f.location.touched)" class="error-msg">
+            Location is required.
+          </div>
+ 
+        </div>
+        
+        <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+      </form>
+
+      <!-- <div *ngIf="redirectingToLogin" class="redirect-message">
+        Redirecting to login...
+      </div>
+       -->
+      <p class="login-link">Already have an account? <a routerLink="/login">Login</a></p>
+    </div>
+  </div>
+  

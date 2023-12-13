@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .logo h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  header .logo span {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #ddd;
+  }
+  
+  nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+  }
+  nav li a:hover {
+    background-color: #444;
+  }
+  
+  main {
+    padding: 50px 0;
+  }
+  
+  section {
+    padding: 20px;
+  }
+  
+  section.hero {
+    background-color: #f1f1f1;
+    display: flex;
+  }
+  
+  section.hero .hero-content {
+    flex: 1;
+    padding: 30px;
+  }
+  
+  section.hero .hero-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  section.hero .hero-content p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  section.hero .hero-content a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  section.hero .hero-image {
+    flex: 1;
+    background-color: #eee;
+    background-image: url("https://th.bing.com/th/id/OIP.qMfYw119ulD-uWiGewn0ggAAAA?rs=1&pid=ImgDetMain");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  section.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .benefit-card {
+    width: 100%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .benefit-card img {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  
+  /* .benefit-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  } */
+  
+  /* .benefit-card p {
+    font-size: 14px;
+    line-height: 1.5;
+  } */
+
+  /* @media (min-width: 768px) {
+    .benefit-card {
+      font-size: 1.25em;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .benefit-card {
+      font-size: 1.5em;
+    }
+  } */
+  
+  section.testimonials {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+  }
+  
+  .testimonial {
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .testimonial span {
+    font-style: italic;
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .nav-link {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  

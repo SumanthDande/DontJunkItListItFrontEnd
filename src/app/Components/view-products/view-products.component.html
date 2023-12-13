@@ -1,0 +1,144 @@
+<!-- 
+<div class="row">
+    <div class="col-md-3" *ngFor="let product of products$| async">
+      <div class="product-container border p-3 m-3">
+        <div class="square">
+          <img [src]="product.imageUrl" alt="{{ product.name }} Image" class="img-fluid" />
+        </div>
+        <h3>{{ product.name }}</h3>
+        <p>Price: ${{ product.price }}</p>
+        <p>Discount: {{ product.discount }}%</p>
+        <div *ngIf="!cartService.isProductInCart(product)">
+          <button (click)="addToCart(product)">Add to Cart</button>
+        </div>
+        <div *ngIf="cartService.isProductInCart(product)">
+          <button (click)="decreaseQuantity(product)">-</button>
+          🛒 {{ getQuantityInCart(product) }}
+          <button (click)="increaseQuantity(product)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+   -->
+
+   <!-- view-products.component.html -->
+<!-- view-products.component.html
+<!-- view-products.component.html -->
+<!--
+<div class="container">
+  <div class="row" *ngFor="let product of products$ | async">
+    <div class="col-md-12">
+      <div class="product">
+        <h2>{{ product.partName }}</h2>
+        <div class="carousel">
+          <carousel>
+            <slide *ngFor="let safeUrls of createSafeUrls([product])">
+              <img *ngFor="let safeUrl of safeUrls" [src]="safeUrl" alt="Product Image" style="width: 100%;" />
+            </slide>
+          </carousel>
+        </div>
+        <p>Manufacturer: {{ product.manufacturer }}</p>
+        <p>Year: {{ product.year }}</p>
+        <p>Condition: {{ product.condition }}</p>
+        <p>Price: {{ product.price | currency }}</p>
+        <button (click)="addToCart(product)">Add to Cart</button>
+        <p>Quantity in Cart: {{ getQuantityInCart(product) }}</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="container">
+  <div class="row" *ngFor="let product of products$ | async">
+    <div class="col-md-12">
+      <div class="product">
+        <h2>{{ product.partName }}</h2>
+
+        <div class="loading-indicator" *ngIf="!product.imagesLoaded">
+          Loading images...
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </div>
+
+        
+        <div class="carousel" *ngIf="product.imagesLoaded">
+          <carousel>
+            <slide *ngFor="let image of createSafeUrls([product])">
+              <img [src]="image" alt="Product Image" style="width: 100%;" />
+            </slide>
+          </carousel>
+        </div>
+
+        <p>Manufacturer: {{ product.manufacturer }}</p>
+        <p>Year: {{ product.year }}</p>
+        <p>Condition: {{ product.condition }}</p>
+        <p>Price: {{ product.price | currency }}</p>
+        <button (click)="addToCart(product)">Add to Cart</button>
+        <p>Quantity in Cart: {{ getQuantityInCart(product) }}</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row" *ngFor="let product of products">
+    <div class="col-md-4">
+      <div class="product-container border p-3 m-3">
+
+        <h2>{{ product.partName }}</h2>
+
+        <div class="loading-indicator" *ngIf="!product.imagesLoaded">
+          Loading images...
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </div>
+
+        <!-- <ng-container *ngIf="product.imagesPromise | async as images">
+          <div class="carousel" *ngIf="product.imagesLoaded">
+            <carousel>
+              <slide *ngFor="let image of imageData">
+                <img [src]="image" alt="Product Image" style="width: 100%;" />
+              </slide>
+            </carousel>
+          </div>
+        </ng-container> -->
+
+        <div class="carousel" *ngIf="product.imagesLoaded">
+          <carousel>
+            <slide *ngFor="let image of imageData">
+              <img [src]="image" alt="Product Image" style="width: 100%;" />
+            </slide>
+          </carousel>
+        </div>
+
+        <p>Manufacturer: {{ product.manufacturer }}</p>
+        <p>Year: {{ product.year }}</p>
+        <p>Condition: {{ product.condition }}</p>
+        <p>Price: {{ product.price | currency }}</p>
+
+        <div *ngIf="!cartService.isProductInCart(product)">
+          <button (click)="addToCart(product)">Add to Cart</button>
+        </div>
+
+        <div *ngIf="cartService.isProductInCart(product)">
+          <button (click)="decreaseQuantity(product)">-</button>
+          🛒 {{ getQuantityInCart(product) }}
+          <button (click)="increaseQuantity(product)">+</button>
+        </div>
+
+        <div *ngIf="product">
+        <!--
+          <a [routerLink]="['/product-details', {product:product}]">View Details</a>
+
+        -->
+        <a [routerLink]="['/product-details', product.partID]">View Details</a>
+
+        </div>
+
+       <!--<a *ngIf="product" [routerLink]="['/product-details']" [state]="{ product: product }">View Details</a>
+       -->
+
+
+      </div>
+    </div>
+  </div>
+</div>

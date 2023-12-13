@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngIf="product">
+          <!-- Display product details -->
+          <h2>{{ product.partName }}</h2>
+          <p>Manufacturer: {{ product.manufacturer }}</p>
+          <p>Year: {{ product.year }}</p>
+          <p>Condition: {{ product.condition }}</p>
+          <p>Price: {{ product.price | currency }}</p>
+          <button (click)="addToCart(product)">Add to Cart</button>
+          <p>Quantity in Cart: {{ getQuantityInCart(product) }}</p>
+          <!-- Add other product details here -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div *ngIf="product">
+          <div class="loading-indicator" *ngIf="!product.imagesLoaded">
+            Loading images...
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          </div>
+  
+          <div *ngFor="let image of imageData">
+            <img [src]="image" alt="Product Image" style="width: 100%;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

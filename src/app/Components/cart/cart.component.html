@@ -1,0 +1,11 @@
+<!-- cart.component.html -->
+<div *ngFor="let product of cartItems$ | async">
+    <img [src]="product.imageUrls" alt="{{ product.partName }} Image" width="50" height="50" />
+    <h3>{{ product.partName }}</h3>
+    <p>Price: ${{ product.price }}</p>
+    <p>Quantity: {{ product.quantity }}</p>
+    <button (click)="increaseQuantity(product)">+</button>
+    <button (click)="decreaseQuantity(product)">-</button>
+    <hr />
+  </div>
+  
