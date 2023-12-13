@@ -11,6 +11,7 @@ import { AddProductsComponent } from './Components/add-products/add-products.com
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 import { ProductResolver } from './product-resolver.service';
 import { FaqComponent } from './Components/faq/faq.component';
+import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'viewImages', component: ImageDisplayComponent},
 
   { path: 'product-details/:id', component: ProductDetailsComponent, resolve:{product: ProductResolver} },
-  {path: 'faq', component: FaqComponent}
+  {path: 'faq', component: FaqComponent},
+  {path: 'contactus', component: ContactUsComponent}
 
 
 ];

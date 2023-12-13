@@ -24,6 +24,7 @@ import { AddProductsComponent } from './Components/add-products/add-products.com
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { FaqComponent } from './Components/faq/faq.component';
+import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FaqComponent } from './Components/faq/faq.component';
     AddProductsComponent,
     ProductDetailsComponent,
     NavBarComponent,
-    FaqComponent  
+    FaqComponent,
+    ContactUsComponent  
    
   ],
   imports: [

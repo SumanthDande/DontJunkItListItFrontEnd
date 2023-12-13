@@ -24,11 +24,11 @@ export class LoginComponent {
         localStorage.setItem('token', response.message);
         this.toastr.success('Login Successful');
         this.toastr.info('Redirecting to home page...')
-        this.router.navigate(['/home']);
+        this.router.navigate(['/viewproducts']);
       },
       (error) => {
         this.toastr.success('Login Successful');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/viewproducts']);
         console.error('Login failed:', error);
       }
     );
