@@ -25,6 +25,7 @@ import { ProductDetailsComponent } from './Components/product-details/product-de
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { FaqComponent } from './Components/faq/faq.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
+import { UserEditComponent } from './Components/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ContactUsComponent } from './Components/contact-us/contact-us.component
     ProductDetailsComponent,
     NavBarComponent,
     FaqComponent,
-    ContactUsComponent  
+    ContactUsComponent,
+    UserEditComponent  
    
   ],
   imports: [

@@ -1,0 +1,15 @@
+<!-- user-edit.component.html -->
+
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password">
+  
+    <label for="address">Address:</label>
+    <input type="text" id="address" formControlName="address">
+  
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" formControlName="phoneNumber">
+  
+    <button type="submit" [disabled]="!editForm.valid">Save Changes</button>
+  </form>
+  

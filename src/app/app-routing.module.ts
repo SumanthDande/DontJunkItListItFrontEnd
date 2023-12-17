@@ -12,6 +12,7 @@ import { ProductDetailsComponent } from './Components/product-details/product-de
 import { ProductResolver } from './product-resolver.service';
 import { FaqComponent } from './Components/faq/faq.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
+import { UserEditComponent } from './Components/user-edit/user-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -28,7 +29,10 @@ const routes: Routes = [
 
   { path: 'product-details/:id', component: ProductDetailsComponent, resolve:{product: ProductResolver} },
   {path: 'faq', component: FaqComponent},
-  {path: 'contactus', component: ContactUsComponent}
+  {path: 'contactus', component: ContactUsComponent},
+
+  { path: 'users/:email/edit', component: UserEditComponent },
+
 
 
 ];

@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
+logout() {
+throw new Error('Method not implemented.');
+}
 
   constructor(private router: Router) {}
 
