@@ -28,6 +28,7 @@ import { ContactUsComponent } from './Components/contact-us/contact-us.component
 import { UserEditComponent } from './Components/user-edit/user-edit.component';
 import { MyProductsComponent } from './Components/my-products/my-products.component';
 import { EditProductDetailsComponent } from './Components/edit-product-details/edit-product-details.component';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { EditProductDetailsComponent } from './Components/edit-product-details/e
     ContactUsComponent,
     UserEditComponent,
     MyProductsComponent,
-    EditProductDetailsComponent  
+    EditProductDetailsComponent,
+    PaymentComponent  
    
   ],
   imports: [

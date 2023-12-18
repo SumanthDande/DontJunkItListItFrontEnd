@@ -14,6 +14,7 @@ export class DjiliURLSModule {
 
   public static USER_CONTROLLER = "users/"
   public static PRODUCTS_CONTROLLER = "products/"
+  public static PAYMENT_CONTROLLER = "payment/"
 
   public static SIGNUP_URL = DjiliURLSModule.SPRING_BASE_URL+DjiliURLSModule.USER_CONTROLLER+"signup"
   public static LOGIN_URL = DjiliURLSModule.SPRING_BASE_URL+DjiliURLSModule.USER_CONTROLLER+"login"
@@ -26,6 +27,8 @@ export class DjiliURLSModule {
   public static GET_USER_ID_BY_EMAIL = DjiliURLSModule.SPRING_BASE_URL+DjiliURLSModule.USER_CONTROLLER+"userID"
 
   public static UPDATE_CAR_PART = DjiliURLSModule.SPRING_BASE_URL + DjiliURLSModule.PRODUCTS_CONTROLLER+"updatepart"
+
+  public static PAYMENT = DjiliURLSModule.SPRING_BASE_URL+ DjiliURLSModule.PAYMENT_CONTROLLER+"validate"
 
 
   

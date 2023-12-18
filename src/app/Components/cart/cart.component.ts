@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../service/cart.service';
 import { Products } from '../../Models/Products';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs';
 export class CartComponent implements OnInit{
   cartItems$: Observable<Products[]>;
 
-  constructor(public  cartService: CartService) {
+  constructor(public  cartService: CartService, private router: Router) {
     this.cartItems$ = this.cartService.cartItems$;
     ;
   }
@@ -25,5 +26,9 @@ export class CartComponent implements OnInit{
 
   decreaseQuantity(product: Products) {
     this.cartService.decreaseQuantity(product);
+  }
+
+  checkout(){
+    this.router.navigate(['/payment'])
   }
 }

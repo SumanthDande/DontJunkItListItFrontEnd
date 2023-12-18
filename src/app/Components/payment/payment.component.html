@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="payment-form">
+        <h2 class="mb-4">Payment Details</h2>
+        <form>
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="Enter card number" [(ngModel)]="cardNumber" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="billingDetails">Billing Details</label>
+                <input type="text" class="form-control" id="billingDetails" placeholder="Enter billing details" required>
+            </div>
+
+            <button type="button" class="btn btn-primary" (click)="validateCard()">Submit Payment</button>
+        </form>
+    </div>
+</div>

@@ -15,6 +15,7 @@ import { ContactUsComponent } from './Components/contact-us/contact-us.component
 import { UserEditComponent } from './Components/user-edit/user-edit.component';
 import { MyProductsComponent } from './Components/my-products/my-products.component';
 import { EditProductDetailsComponent } from './Components/edit-product-details/edit-product-details.component';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'contactus', component: ContactUsComponent},
   {path: 'myproducts', component: MyProductsComponent},
   { path: 'edit-product-details', component: EditProductDetailsComponent },
+  {path: 'payment', component: PaymentComponent},
 
   { path: 'users/:email/edit', component: UserEditComponent },
 
