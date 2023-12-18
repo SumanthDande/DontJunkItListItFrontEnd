@@ -27,7 +27,7 @@ export class LoginComponent {
         if (message === 'User authenticated successfully') {
           // Store token and email in local storage
           localStorage.setItem('token', response.message);
-          localStorage.setItem('email', email);
+          localStorage.setItem('email', this.credentials.email);
 
           this.toastr.success('Login Successful');
           this.toastr.info('Redirecting to home page...');

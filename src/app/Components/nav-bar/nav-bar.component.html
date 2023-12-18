@@ -1,3 +1,13 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ 
+</head>
+
 <nav *ngIf="!isSignUpPage()" class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" routerLink="/home">Home</a>
 
@@ -11,36 +21,50 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/viewproducts">View Products</a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/addproducts">Add Products</a>
+      </li>
+
       <li class="nav-item">
         <a class="nav-link" routerLink="/cart">Cart</a>
       </li>
-      <li class="nav-item dropdown" bsDropdown>
-        <a class="nav-link dropdown-toggle" role="button" id="navbarDropdown">
+    
+
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categories
         </a>
-        <ul class="dropdown-menu" *bsDropdownMenu aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/categories/bumpers">Bumpers</a></li>
-          <li><a class="dropdown-item" href="/categories/doors">Doors</a></li>
-          <li><a class="dropdown-item" href="/categories/electronics">Electronics</a></li>
-          <li><a class="dropdown-item" href="/categories/engine">Engine</a></li>
-          <li><a class="dropdown-item" href="/categories/glass">Glass</a></li>
-        </ul>
-      </li>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/categories/bumpers">Bumpers</a>
+          <a class="dropdown-item" href="/categories/doors">Doors</a>
+          <a class="dropdown-item" href="/categories/electronics">Electronics</a>
+          <a class="dropdown-item" href="/categories/engine">Engine</a>
+          <a class="dropdown-item" href="/categories/glass">Glass</a>
+        </div>
+      </div>
       <li>
         <a class="nav-link" routerLink="/contactus">Contact Us</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/faq">FAQ</a>
       </li>
     </ul>
   </div>
   <ul class="navbar-nav ml-auto">
-    <li class="nav-item dropdown" bsDropdown>
-      <a class="nav-link dropdown-toggle" role="button" id="profileDropdown">
+   
+
+    <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-user"></i>
       </a>
-      <ul class="dropdown-menu dropdown-menu-right" *bsDropdownMenu aria-labelledby="profileDropdown">
-        <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
-        <li><div class="dropdown-divider"></div></li>
-        <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
-      </ul>
-    </li>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+        <a class="dropdown-item" href="/profile">Profile</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/myproducts" >My Products</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
   </ul>
 </nav>

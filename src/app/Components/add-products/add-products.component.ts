@@ -43,10 +43,15 @@ export class AddProductsComponent {
       productData.append('category', this.productForm.get('category')?.value);
       productData.append('price', this.productForm.get('price')?.value);
 
+      // if (this.selectedImages) {
+      //   for (let i = 0; i < this.selectedImages.length; i++) {
+      //     productData.append('images', this.selectedImages[i], this.selectedImages[i].name);
+      //   }
+      // }
       if (this.selectedImages) {
-        for (let i = 0; i < this.selectedImages.length; i++) {
-          productData.append('images', this.selectedImages[i], this.selectedImages[i].name);
-        }
+        Array.from(this.selectedImages).forEach((image, index) => {
+          productData.append(`images[${index}]`, image, image.name);
+        });
       }
 
       this.productService.addProduct(productData).subscribe(

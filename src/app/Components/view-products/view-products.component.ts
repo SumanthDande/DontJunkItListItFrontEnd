@@ -22,21 +22,17 @@ export class ViewProductsComponent implements OnDestroy, OnInit {
 
   ngOnInit(): void {
     //this.loadProducts();
-    this.productService.getProducts().subscribe((data)=>this.products=data)
-    this.generateSafeUrls(this.products);
+    console.log(localStorage.getItem('email'))
+    this.productService.getProducts().subscribe((data) => {
+      this.products = data;
+      this.generateSafeUrls();
+    });
   }
 
   ngOnDestroy(): void {
-    // Clean up any resources here if needed
   }
 
-  // async loadProducts(): Promise<void> {
-  //   // Load your products from wherever they come from (e.g., a service)
-  //   this.products$ = await this.productService.getProducts();
-
-  //   // Call the method to create SafeUrls for the images
-  //   await this.createSafeUrls();
-  // }
+ 
 
   getQuantityInCart(product: Products) {
     return this.cartService.getQuantityInCart(product);
@@ -58,76 +54,64 @@ export class ViewProductsComponent implements OnDestroy, OnInit {
     this.cartService.decreaseQuantity(product);
   }
 
-  // async createSafeUrls(): Promise<void> {
-  //   this.products$.subscribe(async (products) => {
-  //     const promises: Promise<void>[] = products.map(async (product) => {
-  //       // Assuming createSafeUrlForProduct returns a string
-  //       const safeUrl = await this.createSafeUrlForProduct(product);
-  //       product.imageUrls = [safeUrl.toString()]; // Convert to an array with a single element
-  //     });
   
-  //     // Wait for all promises to resolve before proceeding
-  //     await Promise.all(promises);
-  
-  //     // Now you can use the SafeUrls or check the imagesLoaded property if needed
-  //     products.forEach((product) => {
-  //       console.log(`Product ${product.partName} imageUrls:`, product.imageUrls);
-  //     });
-  //   });
-  // }
   
 
-  // private async createSafeUrlForProduct(product: Products): Promise<SafeUrl[]> {
-  //   const productUrls: SafeUrl[] = [];
 
-  //   for (let i = 1; i <= 5; i++) {
-  //     const imageProperty = `image${i}` as keyof Products;
-  //     const blob = product[imageProperty];
-
-  //     if (blob instanceof Blob) {
-  //       try {
-  //         const url = URL.createObjectURL(blob);
-  //         const safeUrl = this.sanitizer.bypassSecurityTrustUrl(url);
-  //         productUrls.push(safeUrl);
-  //       } catch (error) {
-  //         console.error(`Error creating SafeUrl for ${imageProperty} in product:`, product);
+  private createSafeUrl(base64String: any): SafeUrl {
+    const imageUrl = `data:image/png;base64,${base64String}`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(imageUrl) as string;
+  }
+  // generateSafeUrls(products: Products[]): void {
+  //   this.imageData = [];
+  
+  //   for (const product of products) {
+  //     if (product) {
+  //       const imageKeys = Object.keys(product) as (keyof Products)[];
+  
+  //       for (const key of imageKeys) {
+  //         if (key.startsWith('image') && product[key]) {
+  //           this.imageData.push(this.createSafeUrl(product[key]!));
+  //         }
   //       }
-  //     } else {
-  //       console.error(`Invalid Blob for ${imageProperty} in product:`, product);
   //     }
   //   }
+  //   this.products.forEach((product) => (product.imagesLoaded = true));
 
-  //   // Wait for all images to be loaded before resolving the promise
-  //   await Promise.all(productUrls);
-
-  //   // Set flag after processing all images
-  //   product.imagesLoaded = true;
-
-  //   return productUrls;
+  
+  //   // You can access the SafeUrls in the imageData array now
+  //   console.log('SafeUrls:', this.imageData);
   // }
 
-  private createSafeUrl(base64String: string): SafeUrl {
-    const imageUrl = `data:image/png;base64,${base64String}`;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(imageUrl);
-  }
-  generateSafeUrls(products: Products[]): void {
-    // Clear the existing imageData array before processing new products
-    this.imageData = [];
+  generateSafeUrls(): void {
+    this.products.forEach((product) => {
+      const productImageData: SafeUrl[] = [];
   
-    for (const product of products) {
-      if (product) {
-        const imageKeys = Object.keys(product) as (keyof Products)[];
-  
-        for (const key of imageKeys) {
-          if (key.startsWith('image') && product[key]) {
-            this.imageData.push(this.createSafeUrl(product[key]!));
-          }
+      if (product.imageUrls) {
+        for (const image of product.imageUrls) {
+          // Assuming the server sends image URLs
+          productImageData.push(this.createSafeUrl(image));
         }
       }
-    }
   
-    // You can access the SafeUrls in the imageData array now
-    console.log('SafeUrls:', this.imageData);
+      product.imageUrls = productImageData;
+      product.imagesLoaded = true;
+    });
   }
+
+  currentSlideIndex = 0;
+
+nextSlide() {
+  if (this.currentSlideIndex < this.imageData.length - 1) {
+    this.currentSlideIndex++;
+  }
+}
+
+prevSlide() {
+  if (this.currentSlideIndex > 0) {
+    this.currentSlideIndex--;
+  }
+}
+
   
 }

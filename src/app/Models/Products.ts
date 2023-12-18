@@ -19,7 +19,7 @@ export class Products {
   description: string;
   user: any; // TODO: replace 'any' with a user model 
   cart: any; // TODO: replace 'any' with a cart model 
-  imageUrls?: string[]; 
+  imageUrls?: SafeUrl[]; 
   imagesLoaded?: boolean; // optional property indicating if images are loaded
   imagesPromise: Promise<SafeUrl[]>; 
 

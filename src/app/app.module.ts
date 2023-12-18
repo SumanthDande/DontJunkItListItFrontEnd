@@ -26,6 +26,8 @@ import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { FaqComponent } from './Components/faq/faq.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { UserEditComponent } from './Components/user-edit/user-edit.component';
+import { MyProductsComponent } from './Components/my-products/my-products.component';
+import { EditProductDetailsComponent } from './Components/edit-product-details/edit-product-details.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { UserEditComponent } from './Components/user-edit/user-edit.component';
     NavBarComponent,
     FaqComponent,
     ContactUsComponent,
-    UserEditComponent  
+    UserEditComponent,
+    MyProductsComponent,
+    EditProductDetailsComponent  
    
   ],
   imports: [

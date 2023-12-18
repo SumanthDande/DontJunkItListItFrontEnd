@@ -1,0 +1,24 @@
+<!-- myproducts.component.html -->
+
+<div *ngIf="userProducts.length > 0; else noProducts" class="container mt-4">
+    <h2>Your Car Parts</h2>
+    <ul class="list-group">
+      <li *ngFor="let product of userProducts" class="list-group-item">
+        <div class="d-flex justify-content-between align-items-center">
+          <div (click)="navigateToProductDetails(product)">
+            <h5 class="mb-1">{{ product.partName }}</h5>
+            <p class="mb-1">Manufacturer: {{ product.manufacturer }}</p>
+            <p class="mb-1">Year: {{ product.year }}</p>
+            <p class="mb-1">Condition: {{ product.condition }}</p>
+            <p class="mb-1">Price: {{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
+          </div>
+          <button class="btn btn-primary" (click)="navigateToProductDetails(product)">Edit Product</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <ng-template #noProducts class="container mt-4">
+    <p>No car parts found for the user.</p>
+  </ng-template>
+  
